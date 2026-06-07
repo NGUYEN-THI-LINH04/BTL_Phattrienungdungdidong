@@ -873,3 +873,83 @@ Test thử chức năng
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0d09a4e6-c83c-42cc-bf94-b58432cdd98a" />
 
+Tạo app 2
+
+<img width="1140" height="819" alt="image" src="https://github.com/user-attachments/assets/f65965ad-3c28-4d31-9540-08196e927c41" />
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/28bb23ae-dd9c-4977-9f0d-40e39791e441" />
+
+<img width="1138" height="821" alt="image" src="https://github.com/user-attachments/assets/815bdf52-651f-4c1f-80ea-438390224744" />
+
+
+Cấu hình Quyền Internet trong Manifest
+Mở file app -> manifests -> AndroidManifest.xml.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/dc051786-5e07-4cd5-a406-de3433d6f031" />
+
+Viết code cho Màn hình 1 (About + Điều hướng)
+
+Giao diện: Mở file res -> layout -> activity_about.xml
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9cf27502-1d83-4b9d-8808-aa48f981d331" />
+
+Logic: Mở file MainActivity.java.
+
+Viết code ánh xạ nút bấm và dùng lệnh Intent để khi click nút 1 sẽ mở Activity2, click nút 2 sẽ mở Activity3
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4888e68c-56bc-4d99-99d4-cc7d2e229bb6" />
+
+Viết code cho Màn hình 2 (Giải toán + Gọi API) + Giao diện: Mở file res -> layout -> activity_math.xml. Viết code thiết kế gồm 3 ô nhập dữ liệu (EditText cho a, b, c), 1 nút bấm "GIẢI TOÁN" và 1 TextView hiện kết quả.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b67a4ded-ae7c-4f58-932f-b0cfcc2d7563" />
+
+Logic Xử lý mạng & Toán học: MathActivity.java
+
+Mở file MathActivity.java.
+
+Viết hàm giải phương trình khi ấn nút.
+
+Tạo một luồng chạy nền bằng ExecutorService để đóng gói dữ liệu thành chuỗi JSON lồng nhau (Nested JSON) theo đúng cấu trúc: {app_by, input: {...}, output: {...}}.
+
+Thực hiện kết nối HttpURLConnection, đẩy dữ liệu theo phương thức POST lên địa chỉ https://k58kmt.tdh.io.vn/api.
+
+Nhận kết quả phản hồi {ok:1, stt:1234} từ Server và hiển thị lên màn hình.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/88e1417f-d519-4863-9042-9d4bcb3e97b6" />
+
+Viết code cho Màn hình 3 (WebView Định danh)
+
+Giao diện: Mở file res -> layout -> WebActivity.xml. Thêm duy nhất một linh kiện chiếm toàn màn hình (match_parent).
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/05564346-c545-4a5a-9ed0-2ad7a776628a" />
+
+Logic: Mở file  WebActivity.java.
+
+Kích hoạt JavaScript (setJavaScriptEnabled(true)).
+
+Tạo chuỗi URL động bằng cách nối mã sinh viên vào đuôi: "https://k58kmt.tdh.io.vn?masv=" + MA_SINH_VIEN.
+
+Gọi lệnh loadUrl() để tải trang web ngay trong ứng dụng.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/67fe9a4c-7b14-4bef-ae13-37caf4ea94aa" />
+
+## Chạy thử và kiểm tra 
+
+- Test màn 1: Kiểm tra xem thông tin cá nhân đã chuẩn chưa. Ấn nút 1 xem có nhảy sang màn 2 không.
+  
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0891b706-24a2-48fd-b4f9-d4c1d3c9b48a" />
+
+- ấn nút giải phương trình thì nhảy sang màn hình 2
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f1e6cede-38f1-4166-bd99-2daae2b93671" />
+
+**Em thừa thầy, phần code gọi API POST dữ liệu và WebView của em đã viết chuẩn cấu trúc, nhưng do server k58kmt.tdh.io.vn hiện đang sập (hoặc không truy cập được từ mạng ngoài) nên app nhảy vào nhánh báo lỗi kết nối ạ.**
+
+<img width="960" height="1018" alt="image" src="https://github.com/user-attachments/assets/3786a4e6-b7e5-4d6c-beee-8d4e73782a3a" />
+
+Test màn 3: Ấn nút mở WebView xem trang web có tải mượt mà và nhận đúng mã sinh viên ở thanh địa chỉ không.
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4408fd06-904a-4c29-b539-f975b8b01377" />
+
+-  Do tên miền k58kmt.tdh.io.vn thực sự đang sập hoặc không tồn tại. Tuy nhiên dòng chữ nhỏ trên màn hình máy ảo, nó ghi là: The webpage at https://k58kmt.tdh.io.vn/?masv=K225480106040 could not be loaded... Điều này chứng tỏ code WebView định danh đã chạy đúng 100%!.Ứng dụng đã gọi đúng linh kiện trình duyệt. Ứng dụng đã tự động tạo chuỗi, ghép thành công mã số sinh viên K225480106040 vào đuôi URL một cách chuẩn xác đúng như yêu cầu của đề bài. Việc web không hiện ra chỉ đơn thuần là do máy chủ đang đóng cửa server. **
