@@ -873,16 +873,23 @@ Test thử chức năng
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0d09a4e6-c83c-42cc-bf94-b58432cdd98a" />
 
-Tạo app 2
+Tạo app 2(android studio): tạo app tương đương với Mit App inventor
+
+- Tạo Project mới trong Android Studio
+
+   + File → New → New Project → Empty Views Activity
 
 <img width="1140" height="819" alt="image" src="https://github.com/user-attachments/assets/f65965ad-3c28-4d31-9540-08196e927c41" />
 
-
+- Tạo thêm Activity 1 , Activity 2 và Activity 3
+ + cột thư mục bên trái (tab Project), tìm đường dẫn: app -> java -> com.example.app2mitinventor
+ + Chuột phải vào thư mục tên package đó -> Chọn New -> Activity-> Empty Views Activity.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/28bb23ae-dd9c-4977-9f0d-40e39791e441" />
 
-<img width="1138" height="821" alt="image" src="https://github.com/user-attachments/assets/815bdf52-651f-4c1f-80ea-438390224744" />
+- Tạo AboutActivity, MathActivity và WebActivity
 
+<img width="594" height="484" alt="image" src="https://github.com/user-attachments/assets/f108fe29-4d1c-4bee-8f0f-97f3b4a95082" />
 
 Cấu hình Quyền Internet trong Manifest
 Mở file app -> manifests -> AndroidManifest.xml.
