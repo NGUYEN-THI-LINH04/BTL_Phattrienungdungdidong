@@ -65,6 +65,7 @@ THIẾT KẾ SCREEN 3
 - kết quả test - Nút bấm chứa tên vẫn nằm ở đó, còn ô phía dưới thì hiển thị trang Google! Điều này chứng tỏ app của bạn hoạt động
 
 <img width="828" height="1792" alt="image" src="https://github.com/user-attachments/assets/2e28b26e-b1bc-41d3-af05-1940b821cd9c" />
+
 # MÔ TẢ QUY TRÌNH TẠO PHẦN MỀM TRÊN MIT APP INVENTOR
 
 ## 1. Thanh công cụ trong MIT App Inventor
@@ -286,4 +287,541 @@ Mở Backpack và dán lại block.
 * Dễ dàng tái sử dụng block
 * Giảm lỗi khi phải tạo lại logic nhiều lần
 
+# 2. Viết app sử dụng Android Studio
+## Android Cơ Bản - Ghi Chú Tổng Hợp
+## 1. AndroidManifest.xml là gì?
 
+`AndroidManifest.xml` là file cấu hình quan trọng nhất của ứng dụng Android.
+
+File này dùng để mô tả thông tin cơ bản của ứng dụng như:
+
+* Tên package
+* Activity của ứng dụng
+* Quyền (Permission)
+* Theme
+* Icon
+* Version ứng dụng
+
+Ví dụ cấu trúc Manifest:
+
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:theme="@style/Theme.MyApp">
+
+        <activity android:name=".MainActivity"/>
+
+    </application>
+
+</manifest>
+```
+
+### Mục đích
+
+Giúp Android hiểu ứng dụng gồm những thành phần nào và ứng dụng cần quyền gì để hoạt động.
+
+---
+
+## 2. App cần quyền để thực hiện chức năng
+
+Một số chức năng trong Android yêu cầu cấp quyền trước khi sử dụng.
+
+Ví dụ:
+
+* Internet
+* Camera
+* Vị trí GPS
+* Bộ nhớ
+* Micro
+
+### Khai báo quyền trong Manifest
+
+Ví dụ cấp quyền Internet:
+
+```xml
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+
+Ví dụ cấp quyền Camera:
+
+```xml
+<uses-permission android:name="android.permission.CAMERA"/>
+```
+
+### Mục đích của Permission
+
+* Đảm bảo bảo mật cho người dùng
+* Tránh ứng dụng truy cập trái phép dữ liệu cá nhân
+* Android yêu cầu người dùng đồng ý trước khi cấp quyền
+
+---
+
+## 3. Vòng đời của ứng dụng Android
+
+Một ứng dụng Android hoạt động theo vòng đời (Lifecycle).
+
+Các hàm quan trọng gồm:
+
+* `onCreate()`
+* `onStart()`
+* `onResume()`
+* `onPause()`
+* `onStop()`
+* `onDestroy()`
+
+### Ý nghĩa từng hàm
+
+#### onCreate()
+
+Được gọi khi Activity vừa được tạo.
+
+Thường dùng để:
+
+* Khởi tạo giao diện
+* Ánh xạ View
+* Khởi tạo dữ liệu
+
+Ví dụ:
+
+```java
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+}
+```
+
+---
+
+#### onStart()
+
+Được gọi khi Activity bắt đầu hiển thị.
+
+---
+
+#### onResume()
+
+Được gọi khi người dùng bắt đầu tương tác với ứng dụng.
+
+---
+
+#### onPause()
+
+Được gọi khi ứng dụng bị tạm dừng.
+
+Ví dụ:
+Người dùng chuyển sang ứng dụng khác.
+
+---
+
+#### onStop()
+
+Được gọi khi ứng dụng không còn hiển thị.
+
+---
+
+#### onDestroy()
+
+Được gọi khi Activity bị đóng hoàn toàn.
+
+---
+
+## 4. Tại sao project mới có sẵn hàm onCreate()?
+
+Sau khi tạo project mới, Android Studio tự sinh sẵn:
+
+```java
+protected void onCreate(Bundle savedInstanceState)
+```
+
+Lý do:
+
+Android sẽ tự động gọi hàm này khi Activity được khởi tạo.
+
+Do đó lập trình viên thường đặt code khởi tạo trong `onCreate()`.
+
+Ví dụ:
+
+```java
+setContentView(R.layout.activity_main);
+```
+
+Dùng để gắn giao diện XML vào Activity.
+
+---
+
+## 5. Kiểm tra quyền bằng Java
+
+Ngoài khai báo trong Manifest, Android còn yêu cầu kiểm tra quyền bằng code.
+
+Ví dụ kiểm tra quyền Camera:
+
+```java
+if(ContextCompat.checkSelfPermission(
+        this,
+        Manifest.permission.CAMERA)
+        != PackageManager.PERMISSION_GRANTED){
+
+    ActivityCompat.requestPermissions(
+            this,
+            new String[]{
+                    Manifest.permission.CAMERA
+            },1);
+}
+```
+
+### Ý nghĩa
+
+* Kiểm tra xem ứng dụng đã có quyền chưa
+* Nếu chưa sẽ yêu cầu người dùng cấp quyền
+
+---
+
+## 6. Giao diện Android bằng XML
+
+Giao diện Android được thiết kế trong thư mục:
+
+```text
+res/layout
+```
+
+Ví dụ:
+
+```text
+activity_main.xml
+activity_second.xml
+```
+
+Android hỗ trợ hai cách xây dựng giao diện:
+
+* **XML Code**
+* **Design View**
+
+### XML
+
+Viết giao diện bằng code XML.
+
+Ví dụ:
+
+```xml
+<Button
+    android:id="@+id/btnTinh"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Tính"/>
+```
+
+### Design View
+
+Thiết kế giao diện bằng kéo thả trực tiếp.
+
+---
+
+## 7. Hardcode và Resource
+
+Không nên hardcode text trực tiếp trong XML.
+
+Ví dụ không nên:
+
+```xml
+android:text="Xin chào"
+```
+
+Nên lưu trong:
+
+```text
+res/values/strings.xml
+```
+
+Ví dụ:
+
+```xml
+<string name="hello">Xin chào</string>
+```
+
+Sau đó tham chiếu:
+
+```xml
+android:text="@string/hello"
+```
+
+### Cú pháp tham chiếu
+
+```text
+@string/tên_biến
+```
+
+Ví dụ:
+
+```text
+@string/hello
+```
+
+---
+
+## 8. Ưu điểm của việc tham chiếu Resource
+
+* Dễ thay đổi nội dung
+* Không phải sửa nhiều nơi
+* Dễ quản lý text
+* Hỗ trợ đa ngôn ngữ
+
+Ví dụ:
+
+```text
+values-vi
+values-en
+```
+
+Android sẽ tự động đổi ngôn ngữ.
+
+---
+
+## 9. LOCATION, LANGUAGE, THEME
+
+Android hỗ trợ tự động lấy giá trị phù hợp với:
+
+* **Location**
+* **Language**
+* **Theme**
+
+Ví dụ:
+
+Người dùng chọn English:
+
+Ứng dụng tự lấy:
+
+```text
+values-en
+```
+
+Người dùng chọn tiếng Việt:
+
+Ứng dụng tự lấy:
+
+```text
+values-vi
+```
+
+### Ý nghĩa
+
+Giúp ứng dụng hiển thị phù hợp với:
+
+* Quốc gia
+* Ngôn ngữ
+* Giao diện người dùng
+
+---
+
+## 10. Đối tượng chứa (Layout Container)
+
+Container là đối tượng dùng để chứa các component con.
+
+Ví dụ:
+
+* `LinearLayout`
+* `ConstraintLayout`
+* `RelativeLayout`
+
+### LinearLayout
+
+Dùng để sắp xếp component theo:
+
+#### Chiều dọc
+
+```xml
+android:orientation="vertical"
+```
+
+#### Chiều ngang
+
+```xml
+android:orientation="horizontal"
+```
+
+---
+
+### Gravity
+
+Dùng để căn chỉnh vị trí component.
+
+Ví dụ:
+
+```xml
+android:gravity="center"
+```
+
+Ý nghĩa:
+Canh giữa nội dung.
+
+---
+
+## 11. Code tương tác với Layout
+
+Ví dụ hiển thị text:
+
+```java
+TextView tv;
+
+tv = findViewById(R.id.txtHello);
+
+tv.setText(getString(R.string.hello));
+```
+
+### Ý nghĩa
+
+Sử dụng:
+
+```java
+getString()
+```
+
+để tránh hardcode và hỗ trợ đa ngôn ngữ.
+
+---
+
+## 12. Hiển thị text phù hợp Language, Theme, Location
+
+Để text phù hợp với thiết lập của người dùng cần:
+
+### Không hardcode text
+
+Ví dụ không nên:
+
+```java
+tv.setText("Xin chào");
+```
+
+Nên dùng:
+
+```java
+tv.setText(getString(R.string.hello));
+```
+
+### Mục đích
+
+* Hỗ trợ nhiều ngôn ngữ
+* Tự động đổi theo hệ điều hành
+* Dễ quản lý nội dung
+
+---
+
+## 13. Event trong Android
+
+Event là hành động của người dùng tác động vào ứng dụng.
+
+Ví dụ:
+
+* Click Button
+* Click Text
+* Click Image
+
+---
+
+## 14. Xử lý sự kiện bằng 2 cách
+
+### Cách 1: Dùng XML
+
+Trong Layout:
+
+```xml
+android:onClick="clickButton"
+```
+
+Trong Java:
+
+```java
+public void clickButton(View view){
+
+}
+```
+
+### Ý nghĩa
+
+Khi người dùng click button sẽ gọi hàm `clickButton()`.
+
+---
+
+### Cách 2: setOnClickListener
+
+Trong Java:
+
+```java
+Button btn;
+
+btn = findViewById(R.id.btnTinh);
+
+btn.setOnClickListener(v -> {
+
+});
+```
+
+### Ý nghĩa
+
+Khi click button sẽ thực hiện đoạn code bên trong.
+
+---
+
+## 15. Thư mục Assets trong Android
+
+Assets là thư mục đặc biệt dùng để chứa dữ liệu đi kèm ứng dụng.
+
+Ví dụ:
+
+* JSON
+* TXT
+* HTML
+* Image
+* Video
+
+Khi build APK, toàn bộ file trong Assets sẽ đi theo ứng dụng.
+
+### Lợi ích
+
+* Hoạt động offline
+* Không cần Internet
+* Truy cập dữ liệu nhanh
+
+---
+
+## 16. Truy cập file trong Assets
+
+Ví dụ đọc file:
+
+```java
+InputStream inputStream =
+        getAssets().open("data.json");
+```
+
+### Ý nghĩa
+
+Cho phép ứng dụng truy cập dữ liệu đã đóng gói sẵn trong app.
+
+---
+
+## 17. Ứng dụng của Assets
+
+Ví dụ:
+
+Ứng dụng hướng dẫn món ăn Việt Nam.
+
+Dữ liệu:
+
+```text
+monan.json
+```
+
+chứa:
+
+* tên món ăn
+* mô tả
+* hình ảnh
+
+Ứng dụng có thể hoạt động kể cả khi không có Internet.
+
+### Ưu điểm
+
+* Offline hoàn toàn
+* Không phụ thuộc server
+* Dữ liệu luôn sẵn trong ứng dụng
