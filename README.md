@@ -65,5 +65,225 @@ THIẾT KẾ SCREEN 3
 - kết quả test - Nút bấm chứa tên vẫn nằm ở đó, còn ô phía dưới thì hiển thị trang Google! Điều này chứng tỏ app của bạn hoạt động
 
 <img width="828" height="1792" alt="image" src="https://github.com/user-attachments/assets/2e28b26e-b1bc-41d3-af05-1940b821cd9c" />
+# MÔ TẢ QUY TRÌNH TẠO PHẦN MỀM TRÊN MIT APP INVENTOR
+
+## 1. Thanh công cụ trong MIT App Inventor
+
+Trong quá trình xây dựng ứng dụng bằng MIT App Inventor, công cụ cung cấp nhiều khu vực hỗ trợ thiết kế và lập trình ứng dụng.
+
+### 1.1 Palette
+
+Palette là khu vực chứa các component dùng để xây dựng ứng dụng bằng phương pháp kéo thả.
+
+Một số component thường sử dụng gồm:
+
+* **Button**: dùng để tạo nút bấm
+* **Label**: dùng để hiển thị văn bản
+* **TextBox**: dùng để nhập dữ liệu từ người dùng
+* **Image**: dùng để hiển thị hình ảnh
+* **WebViewer**: dùng để hiển thị website trong ứng dụng
+* **Layout**: dùng để bố trí giao diện
+
+**Mục đích:**
+Giúp người dùng lựa chọn component cần thiết để xây dựng giao diện ứng dụng.
+
+---
+
+### 1.2 Viewer
+
+Viewer là khu vực mô phỏng màn hình điện thoại.
+
+Người dùng thực hiện kéo thả component trực tiếp từ Palette vào Viewer để xây dựng giao diện.
+
+**Mục đích:**
+Cho phép xem trước giao diện ứng dụng trong quá trình thiết kế.
+
+---
+
+### 1.3 Components
+
+Components là khu vực hiển thị danh sách toàn bộ thành phần đang tồn tại trong màn hình.
+
+Ví dụ:
+
+* Button1
+* TextBox1
+* Label1
+
+**Mục đích:**
+Giúp quản lý các component dễ dàng hơn trong quá trình thiết kế ứng dụng.
+
+---
+
+### 1.4 Properties
+
+Properties là khu vực dùng để thay đổi thuộc tính của component.
+
+Một số thuộc tính thường dùng:
+
+* **Text**: nội dung hiển thị
+* **Width / Height**: kích thước component
+* **FontSize**: kích thước chữ
+* **BackgroundColor**: màu nền
+* **Visible**: hiển thị hoặc ẩn component
+
+Ví dụ:
+
+Khi tạo một Button, có thể chỉnh:
+
+* Text = “Tính”
+* Width = Fill Parent
+* BackgroundColor = Blue
+
+**Mục đích:**
+Giúp thay đổi giao diện và hành vi của component theo nhu cầu sử dụng.
+
+---
+
+## 2. Kéo thả component và thay đổi thuộc tính
+
+MIT App Inventor sử dụng phương pháp kéo thả component để tạo giao diện ứng dụng.
+
+### Cách thực hiện
+
+**Bước 1:**
+Chọn component trong mục **Palette**.
+
+**Bước 2:**
+Kéo thả component vào khu vực **Viewer**.
+
+**Bước 3:**
+Chọn component vừa thêm và chỉnh thuộc tính trong **Properties**.
+
+Ví dụ:
+
+Kéo **Button** vào màn hình và chỉnh:
+
+* Text = “Tính”
+* Width = Fill Parent
+* FontSize = 18
+
+### Mục đích
+
+* Giúp tạo giao diện nhanh chóng
+* Không cần viết code giao diện thủ công
+* Dễ chỉnh sửa trực tiếp khi thiết kế
+
+---
+
+## 3. Block trong MIT App Inventor
+
+### Bản chất của Block
+
+MIT App Inventor sử dụng phương pháp lập trình trực quan bằng block kéo thả.
+
+Thay vì phải viết code bằng Java hoặc Kotlin, người dùng chỉ cần kéo các block logic và ghép nối lại với nhau để tạo chức năng cho ứng dụng.
+
+Ví dụ:
+
+Khi người dùng nhấn nút Button:
+
+```text
+when Button1.Click
+```
+
+thì ứng dụng sẽ thực hiện đoạn xử lý được nối phía dưới.
+
+Trong bài tập này, block được sử dụng để giải phương trình bậc nhất:
+
+```text
+when Button1.Click
+set Label2.Text to
+((0 - TextBox2.Text) / TextBox1.Text)
+```
+
+Mục đích của block trên là tính nghiệm:
+
+[
+x=-\frac{b}{a}
+]
+
+sau đó hiển thị kết quả lên màn hình.
+
+### Cách kéo thả block
+
+**Bước 1:**
+Chọn tab **Blocks**.
+
+**Bước 2:**
+Chọn component cần xử lý.
+
+**Bước 3:**
+Kéo block chức năng vào vùng làm việc.
+
+**Bước 4:**
+Ghép các block logic với nhau để hoàn thiện chức năng.
+
+Ví dụ:
+
+* block Click
+* block tính toán
+* block hiển thị kết quả
+
+---
+
+## 4. Ưu điểm của block so với viết code
+
+### Ưu điểm
+
+* Dễ học và dễ sử dụng
+* Không cần nhớ cú pháp lập trình
+* Hạn chế lỗi syntax
+* Trực quan, dễ quan sát luồng xử lý
+* Phù hợp với người mới học phát triển ứng dụng di động
+
+---
+
+## 5. Nhược điểm của block
+
+### Nhược điểm
+
+* Khi project lớn sẽ có nhiều block gây khó quản lý
+* Khó tối ưu hiệu năng ứng dụng
+* Ít linh hoạt hơn so với lập trình Java hoặc Kotlin
+* Một số chức năng nâng cao khó triển khai
+
+---
+
+## 6. Copy và Paste block bằng Backpack
+
+### Backpack là gì?
+
+Backpack là công cụ dùng để lưu trữ và tái sử dụng block trong MIT App Inventor.
+
+### Cách sử dụng
+
+**Bước 1:**
+Nhấn chuột phải vào block cần sao chép.
+
+**Bước 2:**
+Chọn:
+
+```text
+Add to Backpack
+```
+
+**Bước 3:**
+Chuyển sang screen khác hoặc project khác.
+
+**Bước 4:**
+Mở Backpack và dán lại block.
+
+### Mục đích
+
+* Tiết kiệm thời gian lập trình
+* Không cần tạo lại block nhiều lần
+* Có thể tái sử dụng logic giữa các screen
+
+### Ưu điểm của Backpack
+
+* Giảm thời gian thiết kế
+* Dễ dàng tái sử dụng block
+* Giảm lỗi khi phải tạo lại logic nhiều lần
 
 
