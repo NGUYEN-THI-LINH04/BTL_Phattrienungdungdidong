@@ -58,7 +58,7 @@ Viết Block giải toán
 THIẾT KẾ SCREEN 3
 
 - ở phần url sẽ để https://www.google.com , để test thử xem phần mit app có hoạt động không
-- Kéo thêm 1 dòng chữ (Label) từ cột User Interface bên trái thả vào màn hình, đặt nó nằm phía trên hoặc phía dưới cái WebViewer đó. Thay đổi chữ hiển thị của nút bấm thành: "bài tập của xuân trang".
+- Kéo thêm 1 dòng chữ (Label) từ cột User Interface bên trái thả vào màn hình, đặt nó nằm phía trên hoặc phía dưới cái WebViewer đó. Thay đổi chữ hiển thị của nút bấm thành: "Website của Nguyễn Thị Linh".
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/480a08d1-76a4-4205-be9f-15ed459aa795" />
 
