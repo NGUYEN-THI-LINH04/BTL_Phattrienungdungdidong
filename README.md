@@ -825,3 +825,51 @@ chứa:
 * Offline hoàn toàn
 * Không phụ thuộc server
 * Dữ liệu luôn sẵn trong ứng dụng
+# Tạo app 1
+- Tạo Project mới trong Android Studio
+
+- File → New → New Project → Empty Views Activity
+
+<img width="1127" height="817" alt="image" src="https://github.com/user-attachments/assets/8cbfb6f0-8ca1-497e-beaa-2743c2cf8001" />
+
+Tạo thư mục Assets
+
+<img width="603" height="463" alt="image" src="https://github.com/user-attachments/assets/32696e29-a927-4452-badb-0735cedbb34d" />
+
+- Tạo file foods.json: Click chuột phải vào thư mục assets vừa tạo → New → File → đặt tên foods.json image
+  
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e2c773fb-f16b-4b2d-b29d-a738e2fc0993" />
+
+- Thiết kế giao diện (activity_main.xml)
+  
+    + Mở res/layout/activity_main.xml
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/890d1b44-a71c-4907-a902-dfb0f33f3899" />
+
+- Viết code Java (MainActivity.java)
+    + Mở MainActivity.java
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1b4b374b-0858-44e5-a9fd-ea461d4488f3" />
+
+mở file res/values/strings.xml
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/80e20e36-0d82-4c7a-bb8d-004fb2c91811" />
+
+- Chạy Bài
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/955c3ea4-40b5-4304-ad07-eac782b94453" />
+
+Test thử chức năng
+
+- Ấn vào cao lấu sẽ ra như dưới
+- 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c08a6951-b8a0-48f5-b5ff-59e28707d0d8" />
+
+- Gõ tên tỉnh TP.HCM thì nó sẽ ra món ăn ở tỉnh đó là bánh mì
+  
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/230409f4-7552-4dba-9755-0316fccd4469" />
+
+- Chọn Hà nội thì nó sẽ hiện thị các mon đặc trưng của Hà Nội
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0d09a4e6-c83c-42cc-bf94-b58432cdd98a" />
+
