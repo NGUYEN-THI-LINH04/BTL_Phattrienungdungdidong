@@ -894,7 +894,7 @@ Tạo app 2(android studio): tạo app tương đương với Mit App inventor
 Cấu hình Quyền Internet trong Manifest
 Mở file app -> manifests -> AndroidManifest.xml.
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/dc051786-5e07-4cd5-a406-de3433d6f031" />
+<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/2d9ca4b5-9d14-4db1-be92-470941f6f2d8" />
 
 Viết code cho Màn hình 1 (About + Điều hướng)
 
