@@ -952,11 +952,5 @@ Gọi lệnh loadUrl() để tải trang web ngay trong ứng dụng.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f1e6cede-38f1-4166-bd99-2daae2b93671" />
 
-**Em thừa thầy, phần code gọi API POST dữ liệu và WebView của em đã viết chuẩn cấu trúc, nhưng do server k58kmt.tdh.io.vn hiện đang sập (hoặc không truy cập được từ mạng ngoài) nên app nhảy vào nhánh báo lỗi kết nối ạ.**
-
-<img width="960" height="1018" alt="image" src="https://github.com/user-attachments/assets/3786a4e6-b7e5-4d6c-beee-8d4e73782a3a" />
-
 Test màn 3: Ấn nút mở WebView xem trang web có tải mượt mà và nhận đúng mã sinh viên ở thanh địa chỉ không.
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4408fd06-904a-4c29-b539-f975b8b01377" />
-
--  Do tên miền k58kmt.tdh.io.vn thực sự đang sập hoặc không tồn tại. Tuy nhiên dòng chữ nhỏ trên màn hình máy ảo, nó ghi là: The webpage at https://k58kmt.tdh.io.vn/?masv=K225480106040 could not be loaded... Điều này chứng tỏ code WebView định danh đã chạy đúng 100%!.Ứng dụng đã gọi đúng linh kiện trình duyệt. Ứng dụng đã tự động tạo chuỗi, ghép thành công mã số sinh viên K225480106040 vào đuôi URL một cách chuẩn xác đúng như yêu cầu của đề bài. Việc web không hiện ra chỉ đơn thuần là do máy chủ đang đóng cửa server. **
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b85ae680-37ba-45e4-8914-ca256a0dde51" />
