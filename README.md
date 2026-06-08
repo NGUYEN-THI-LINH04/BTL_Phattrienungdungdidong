@@ -60,7 +60,7 @@ THIẾT KẾ SCREEN 3
 - ở phần url sẽ để https://k58kmt.tdh.io.vn?masv=K225480106040, để test thử xem phần mit app có hoạt động không
 - Kéo thêm 1 dòng chữ (Label) từ cột User Interface bên trái thả vào màn hình, đặt nó nằm phía trên hoặc phía dưới cái WebViewer đó. Thay đổi chữ hiển thị của nút bấm thành: "Website của Nguyễn Thị Linh".
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/480a08d1-76a4-4205-be9f-15ed459aa795" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c119db80-be68-45d9-8eae-8203661db786" />
 
 - kết quả test - Nút bấm chứa tên vẫn nằm ở đó, còn ô phía dưới thì hiển thị trang Google! Điều này chứng tỏ app của bạn hoạt động
 
