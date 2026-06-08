@@ -950,7 +950,11 @@ Gọi lệnh loadUrl() để tải trang web ngay trong ứng dụng.
 
 - ấn nút giải phương trình thì nhảy sang màn hình 2
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f1e6cede-38f1-4166-bd99-2daae2b93671" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e1893ce9-7ceb-4d60-aebb-fc39257f3d7d" />
 
 Test màn 3: Ấn nút mở WebView xem trang web có tải mượt mà và nhận đúng mã sinh viên ở thanh địa chỉ không.
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b85ae680-37ba-45e4-8914-ca256a0dde51" />
+
+- Đã vào được link https://k58kmt.tdh.io.vn
+<img width="953" height="440" alt="image" src="https://github.com/user-attachments/assets/442e14ab-fdc5-49b6-b74d-09fb9e4ee46a" />
+
