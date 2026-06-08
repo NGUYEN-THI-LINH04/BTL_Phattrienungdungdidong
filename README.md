@@ -64,7 +64,12 @@ THIẾT KẾ SCREEN 3
 
 - kết quả test - Nút bấm chứa tên vẫn nằm ở đó, còn ô phía dưới thì hiển thị trang Google! Điều này chứng tỏ app của bạn hoạt động
 
-<img width="591" height="1280" alt="image" src="https://github.com/user-attachments/assets/233ed619-590a-44b8-8033-0af59e23f24f" />
+<img width="828" height="1792" alt="image" src="https://github.com/user-attachments/assets/15e571c8-f80f-407e-bf0d-0068b431c14d" />
+
+<img width="828" height="1792" alt="image" src="https://github.com/user-attachments/assets/53318914-8977-4064-b71a-9e944220a7f1" />
+
+<img width="828" height="1792" alt="image" src="https://github.com/user-attachments/assets/d74e8152-b6e2-46b3-bc91-4ae22c0002ca" />
+
 
 # MÔ TẢ QUY TRÌNH TẠO PHẦN MỀM TRÊN MIT APP INVENTOR
 
